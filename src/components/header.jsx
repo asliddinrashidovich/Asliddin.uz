@@ -1,10 +1,26 @@
+"use client"
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+  }, []);
   return (
-    <header className="top-0  z-10 fixed w-full px-5 md:px-10 bg-transparent"  id="header">
+    <header className={`top-0 fixed w-full px-5 md:px-10 z-999 ${ scrolled ? "bg-[#353a40]" : "bg-transparent"}`}  id="header">
       <div className="max-w-[1200px] mx-auto  flex justify-between items-center">
         <button id="btn" className="flex lg:hidden border-none bg-transparent   text-[30px] hover:text-[#21c998] transition-all duration-300 cursor-pointer">
           <IoMenu />

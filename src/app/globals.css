@@ -39,6 +39,27 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
 }
 
 :root {
@@ -117,4 +138,67 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.hero_header {
+  width: 100%;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 600;
+  text-wrap: nowrap;
+  background-image: linear-gradient(75deg, #21c998, #034747);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+.hero_icon {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 1s;
+  position: relative;
+  overflow: hidden;
+}
+.hero_icon .icon {
+  font-size: 20px;
+  color: #000;
+  z-index: 2;
+}
+.hero_icon::after {
+  content: "";
+  top: -4px;
+  left: -80%;
+  right: 0;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  transform: translateY(-85%) translateX(20%);
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 1;
+  transition: all ease 0.3s;
+}
+.hero_icon:hover {
+  border: 2px solid #000;
+}
+.hero_icon:hover::after {
+  content: "";
+  top: 0;
+  left: -50%;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  transform: translateY(-10%) translateX(0%);
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 1;
+}
+.hero_icon:hover .icon {
+  color: #fff;
+  font-size: 25px;
 }
