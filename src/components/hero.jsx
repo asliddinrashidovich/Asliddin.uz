@@ -74,7 +74,7 @@ function Hero() {
           <h1 className="font-bold  text-4xl lg:text-6xl mb-5 lg:mb-7">Frontend Developer</h1>
           <p className="opacity-[70%] text-xs lg:text-xl mb-7">I am a software engineer specializing in creating modern, scalable, and user-friendly applications. Skilled in problem solving and working independently, you can find out about me here.</p>
           <div className="flex gap-5 asliddin mb-5"> 
-            <button ref={iconRef1}
+            <button ref={iconRef1} className="transiti"
               onMouseMove={(e) => handleMouseMove(e, iconRef1, innerRef1)}
               onMouseLeave={() => handleMouseLeave(iconRef1, innerRef1)} >
               <Link  className="hero_icon" target="_blank" href="https://www.instagram.com/asliddin.norboyev_/">

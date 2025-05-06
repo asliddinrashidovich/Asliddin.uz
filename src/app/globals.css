@@ -139,7 +139,9 @@
     @apply bg-background text-foreground;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
   width: 18px;
   padding: 3px;
@@ -181,7 +183,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: color 1s;
+  transition: all 0.4s;
   position: relative;
   overflow: hidden;
 }
@@ -189,6 +191,7 @@
   font-size: 20px;
   color: #000;
   z-index: 2;
+  transition: all 0.1s;
 }
 .hero_icon::after {
   content: "";
@@ -202,7 +205,7 @@
   border-radius: 50%;
   background-color: #000;
   z-index: 1;
-  transition: all ease 0.3s;
+  transition: all 0.5s;
 }
 .hero_icon:hover {
   border: 2px solid #000;

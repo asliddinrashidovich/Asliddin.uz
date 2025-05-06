@@ -1,4 +1,5 @@
 import About from '@/components/about'
+import Blog from '@/components/blog'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
@@ -13,6 +14,7 @@ function Home() {
       <Header/>
       <Hero/>
       <About/>
+      <Blog/>
       <Resume/>
       <Portfolio/>
       <Contact/>
