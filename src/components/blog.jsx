@@ -9,9 +9,9 @@ function Blog() {
         <div className="max-w-[1200px] mx-auto px-8">
             <h2 className="text-center text-3xl lg:text-5xl font-semibold text-white mb-3">Blog</h2>
             <div className="w-[50px] lg:w-[70px] h-1 rounded-full mx-auto bg-[#21c998] mb-10 lg:mb-20"></div>
-            <div className="grid grid-cols-3 justify-between gap-[30px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-[30px]">
                 {blogData.map(item => (
-                    <div key={item.title} className="max-w-xl rounded-2xl shadow-md p-4 space-y-4 border border-[#292929]">
+                    <div key={item.title} className="max-w-xl mx-auto rounded-2xl shadow-md p-4 space-y-4 border border-[#292929]">
                       <div className="flex items-start gap-3">
                         <img
                           src={item.profile_img}

@@ -46,3 +46,35 @@ export const blogData = [
         authot: 'Asliddin Norboyev'
     },
 ]
+
+export const educationData = [
+    {
+        duration: 'oct 2024 - ...',
+        title: "Najot Ta'lim",
+        location: "Tashkent",
+        paragrapgh: "I took lessons in web programming from professional teachers, and I learned all the knowledge necessary for the field of Frontend engineering. I did many projects and improved important soft skills and hard skills"
+    },
+    {
+        duration: 'sep 2025 - ...',
+        location: "Tashkent",
+        title: "Tashkent State University of Economics",
+        paragrapgh: "I am studying World Economics and Sectors and Industries in Economics at the University. My university is parttime and I study for 2 months a year."
+    }
+]
+
+export const experienceData = [
+    {
+        duration: 'sep 2024 - ...',
+        company: "Freelance",
+        location: "Remote",
+        job: 'Software Engineer',
+        paragrapgh: "As a freelancer, I have done many projects with clients on online platforms."
+    },
+    {
+        duration: 'mar 2025 - ...',
+        company: "Alfa Ecosystem",
+        location: "Remote (Moscow)",
+        job: 'Frontend Developer',
+        paragrapgh: "We built several startup projects with the team, and I worked on the Frontend Team. We have built payment systems in different ways"
+    }
+]

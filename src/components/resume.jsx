@@ -1,4 +1,9 @@
 import React from 'react'
+import { ShineBorder } from './magicui/shine-border'
+import { GoBook } from "react-icons/go";
+import { educationData, experienceData } from '@/data/data';
+import { CiLocationOn } from "react-icons/ci";
+import { FaToolbox } from 'react-icons/fa6';
 
 function Resume() {
   return (
@@ -8,43 +13,39 @@ function Resume() {
             <div data-aos="fade-up" data-aos-duration="500" className="line"></div>
             <div className="resume__cards">
                 <div className="resume__education">
-                    <div data-aos="fade-down-right" data-aos-duration="500" className="resume__header">
-                        <i className="fa-solid fa-graduation-cap fa-2xl marked"></i>
-                        <h3>My Education</h3>
+                    <div data-aos="fade-down-right" data-aos-duration="500" className="gap-[15px] items-center flex mb-[25px]">
+                        <GoBook className='text-[30px] text-[#21c998]'/>
+                        <h3 className='text-[25px] font-[500]'>My Education</h3>
                     </div>
-                    <div data-aos="fade-down-right" data-aos-duration="700" className="resume__card">
-                        <h4 className="marked">2024-2024</h4>
-                        <h4 className="card__title">IT Park in Zharkurgan district</h4>
-                        <p>I learned the basics of programming, algorithms, and the basics of frontend programming in there.</p>
-                    </div>
-                    <div data-aos="fade-down-right" data-aos-duration="900" className="resume__card">
-                        <h4 className="marked">2024-2025</h4>
-                        <h4 className="card__title">Najot Ta'lim</h4>
-                        <p>I took lessons in web programming from professional teachers, and I learned all the knowledge necessary for the
-                            field of Frontend engineering. I did many projects and improved important soft skills and hard skills</p>
-                    </div>
-                    <div data-aos="fade-down-right" data-aos-duration="900" className="resume__card">
-                        <h4 className="marked">2024-...</h4>
-                        <h4 className="card__title">Tashkent State University of Economics</h4>
-                        <p>I am studying World Economics and Sectors and Industries in Economics at the University. My university is parttime and I study for 2 months a year.
-                        </p>
-                    </div>
+                    {educationData.map(item => (
+                        <div key={item.paragrapgh} className="resume__card relative overflow-hidden">
+                            <ShineBorder shineColor={"#21c998"} />
+                            <div className='flex justify-between items-center'>
+                                <h4 className="marked">{item.duration}</h4>
+                                <h5 className='text-[#21c998] text-[17px] flex gap-[4px] items-center'><CiLocationOn /> {item.location}</h5>
+                            </div>
+                            <h4 className="card__title">{item.title}</h4>
+                            <p>{item.paragrapgh}</p>
+                        </div>
+                    ))}
                 </div>
                 <div className="resume__experience">
-                    <div data-aos="fade-down-left" data-aos-duration="500" className="resume__header">
-                        <i className="fa-solid fa-trophy fa-2xl marked"></i>
+                    <div data-aos="fade-down-left" data-aos-duration="500" className="gap-[15px] items-center flex mb-[25px]">
+                        <FaToolbox className='text-[30px] text-[#21c998]'/>
                         <h3>My Experience</h3>
                     </div>
-                    <div data-aos="fade-down-left" data-aos-duration="700" className="resume__card">
-                        <h4 className="marked">2024-...</h4>
-                        <h4 className="card__title">Frontend projects</h4>
-                        <p>I have built many independent websites so far and some of them are in available production. You can see them in the portfolio section.</p>
-                    </div>
-                    <div data-aos="fade-down-left" data-aos-duration="900" className="resume__card">
-                        <h4 className="marked">2024-...</h4>
-                        <h4 className="card__title">Freelance</h4>
-                        <p>As a freelancer, I have done many projects with clients on online platforms.</p>
-                    </div>
+                    {experienceData.map(item => (
+                        <div key={item.paragrapgh} className="resume__card relative overflow-hidden">
+                            <ShineBorder shineColor={"#21c998"} />
+                            <div className='flex justify-between items-center'>
+                                <h4 className="marked">{item.duration}</h4>
+                                <h5 className='text-[#21c998] text-[17px] flex gap-[4px] items-center'><CiLocationOn /> {item.location}</h5>
+                            </div>
+                            <h4 className="card__title">{item.company}</h4>
+                            <h6 className="text-[#fefefe] mb-[20px]">{item.job}</h6>
+                            <p>{item.paragrapgh}</p>
+                        </div>
+                    ))}
                 </div>
                 
             </div>
