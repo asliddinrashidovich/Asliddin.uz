@@ -621,6 +621,7 @@ html {
 }
 .contact .contact__layout .contact__content .contact__form .contact__link h3 {
   font-weight: 500;
+  color: #21c998;
 }
 .contact .contact__layout .contact__content .contact__form .contact__link .text {
   color: #fff;
@@ -674,6 +675,9 @@ footer .container img {
 footer .container .logo {
   width: 100px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   border-radius: 10px;
   background-color: #fff;
@@ -681,6 +685,9 @@ footer .container .logo {
 footer .container i {
   font-size: 30px;
   color: #fff;
+}
+footer .container .logo img {
+  transform: translateX(0%);
 }
 /* footer end */
 

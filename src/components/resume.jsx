@@ -1,10 +1,12 @@
+"use client"
+
 import React from 'react'
 import { ShineBorder } from './magicui/shine-border'
 import { GoBook } from "react-icons/go";
-import { educationData, experienceData } from '@/data/data';
+import { educationData, experienceData, skillsData } from '@/data/data';
 import { CiLocationOn } from "react-icons/ci";
 import { FaToolbox } from 'react-icons/fa6';
-
+ 
 function Resume() {
   return (
     <section className="resume" id="resume">
@@ -53,66 +55,12 @@ function Resume() {
         <div className="container">
             <h3 data-aos="fade-up" data-aos-duration="500">Skills</h3>
             <div className="skills">
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/nextjs.png" alt="skills"/>
-                    <p>Next js</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/javascript.jpg" alt="skills"/>
-                    <p>Javascript</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/react.jpg" alt="skills"/>
-                    <p>React JS</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/typescript.jpg" alt="skills"/>
-                    <p>Typescript</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/redux.png" alt="skills"/>
-                    <p>Redux</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/tailwind_css.png" alt="skills"/>
-                    <p>Tailwindcss</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/jest.png" alt="skills"/>
-                    <p>Jest</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/material-ui.png" alt="skills"/>
-                    <p>Material UI</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/webpack.png" alt="skills"/>
-                    <p>Webpack</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/git.jpg" alt="skills"/>
-                    <p>Git & Github</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/html.jpg" alt="skills"/>
-                    <p>HTML</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500"  className="skill">
-                    <img src="./images/scills/tools/css.jpg" alt="skills"/>
-                    <p>CSS</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/bootstrap.jpg" alt="skills"/>
-                    <p>Bootstrap</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill">
-                    <img src="./images/scills/tools/sass.jpg" alt="skills"/>
-                    <p>Sass</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="500" className="skill white">
-                    <img src="./images/scills/tools/figma.jpg" alt="skills"/>
-                    <p>Figma</p>
-                </div>
+                {skillsData.map(item => (
+                    <div key={item.img} data-aos="zoom-in" data-aos-duration="500" className="skill">
+                        <img src={item.img} alt="skill"/>
+                        <p>{item.title}</p>
+                    </div>
+                ))}
             </div>
         </div>  
     </section>
